@@ -8,21 +8,25 @@ public class FarmSpot : MonoBehaviour
     /// The status of the spot
     /// </summary>
     public string Status;
+
     /// <summary>
     /// The sprites used to give the player an idea of the status of the planted ingredient
     /// </summary>
     public List<Sprite> StatusSprite;
-    
+
     public GameObject PlantedIngredient;
     private bool IsGrowing;
+
+    public PlayerInventory Inventory;
+
     // Start is called before the first frame update
-    void Start()
+    private void Start()
     {
         Status = "Empty";
         PlantedIngredient = null;
         IsGrowing = false;
+        Inventory = GameObject.Find("PlayerInventory").GetComponent<PlayerInventory>();
     }
-
 
     /// <summary>
     /// Handles the player clicking on the spot
@@ -48,7 +52,7 @@ public class FarmSpot : MonoBehaviour
             case "Ready":
                 IsGrowing = false;
                 Status = "Empty";
-                GameObject.Find("PlayerInventory").GetComponent<PlayerInventory>().UpdateInventory("Add", PlantedIngredient);
+                Inventory.UpdateInventory("Add", PlantedIngredient);
                 PlantedIngredient = null;
                 break;
         }
@@ -62,9 +66,9 @@ public class FarmSpot : MonoBehaviour
     {
         int harvestTime = PlantedIngredient.GetComponent<InventoryIngredient>().Ingredient.GetComponent<GameIngredient>().HarvestTime;
         int i = 0;
-        while ( i < 3 )
+        while (i < 3)
         {
-            yield return new WaitForSeconds( harvestTime );
+            yield return new WaitForSeconds(harvestTime);
             i++;
             gameObject.GetComponent<SpriteRenderer>().sprite = StatusSprite[i];
         }
