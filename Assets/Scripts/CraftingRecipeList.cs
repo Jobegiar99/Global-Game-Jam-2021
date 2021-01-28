@@ -40,6 +40,6 @@ public class CraftingRecipeList : MonoBehaviour
     /// </summary>
     public void UpdateInventory( GameObject result )
     {
-
+        GameObject.Find("PlayerInventory").GetComponent<PlayerInventory>().UpdateInventory( "Add" , result );
     }
 }
