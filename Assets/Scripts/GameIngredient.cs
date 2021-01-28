@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GameIngredient : MonoBehaviour
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/GameIngredient", order = 1)]
+public class GameIngredient : ScriptableObject
 {
-    // Start is called before the first frame update
     public string Name;
     public string Description;
     public int HarvestTime;
     public int HarvestAmount;
+    public Sprite IngredientSprite;
 }

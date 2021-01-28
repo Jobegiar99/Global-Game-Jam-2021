@@ -14,13 +14,12 @@ public class FarmSpot : MonoBehaviour
     public List<Sprite> StatusSprite;
     
     public GameObject PlantedIngredient;
-    private bool IsGrowing;
     // Start is called before the first frame update
     void Start()
     {
         Status = "Empty";
         PlantedIngredient = null;
-        IsGrowing = false;
+
     }
 
 
@@ -35,18 +34,11 @@ public class FarmSpot : MonoBehaviour
                 //open inventory to plant item
                 PlantedIngredient = null;//obtain inventory item
                 Status = "Growing";
-                break;
-
-            case "Growing":
-                if (!IsGrowing)
-                {
-                    IsGrowing = true;
-                    StartCoroutine(GrowIngredient());
-                }
+                StartCoroutine(GrowIngredient());
                 break;
 
             case "Ready":
-                IsGrowing = false;
+
                 Status = "Empty";
                 GameObject.Find("PlayerInventory").GetComponent<PlayerInventory>().UpdateInventory("Add", PlantedIngredient);
                 PlantedIngredient = null;

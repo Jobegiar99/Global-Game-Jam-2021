@@ -7,11 +7,11 @@ public class PlayerInventory : MonoBehaviour
     /// <summary>
     /// List of all the ingredients that the player has.
     /// </summary>
-    private List<GameObject> PlayerIngredients;
+    private List<InventoryIngredient> PlayerIngredients;
 
     private void Start()
     {
-        PlayerIngredients = new List<GameObject>();
+        PlayerIngredients = new List<InventoryIngredient>();
     }
 
     /// <summary>
@@ -19,7 +19,7 @@ public class PlayerInventory : MonoBehaviour
     ///<para name = "action">Action to be done in the inventory</para>
     ///<para name = "actionIngredient">The ingredient which will suffer changes</para>
     /// </summary>
-    public void UpdateInventory( string action , GameObject actionIngredient )
+    public void UpdateInventory( string action , InventoryIngredient actionIngredient )
     {
         switch( action)
         {
@@ -37,12 +37,12 @@ public class PlayerInventory : MonoBehaviour
     ///<para name = "action">Action to be done in the inventory</para>
     ///<para name = "actionIngredient">The ingredient which will suffer changes</para>
     /// </summary>
-    private void AddItem( string action , GameObject actionIngredient )
+    private void AddItem( string action , InventoryIngredient actionIngredient )
     {
         bool ingredientExists =PlayerIngredients.Contains( actionIngredient );
         if( ingredientExists)
         {
-            PlayerIngredients[ PlayerIngredients.IndexOf( actionIngredient ) ].GetComponent< InventoryIngredient >().ModifyQuantity( action , 1 );
+            PlayerIngredients[ PlayerIngredients.IndexOf( actionIngredient ) ].ModifyQuantity( action , 1 );
         }
         else
         {
@@ -56,7 +56,7 @@ public class PlayerInventory : MonoBehaviour
     ///<para name = "action">Action to be done in the inventory</para>
     ///<para name = "actionIngredient">The ingredient which will suffer changes</para>
     /// </summary>
-    private void RemoveItem( GameObject actionIngredient )
+    private void RemoveItem( InventoryIngredient actionIngredient )
     {
         bool ingredientExists = PlayerIngredients.Contains( actionIngredient );
         if( ingredientExists )
@@ -64,5 +64,4 @@ public class PlayerInventory : MonoBehaviour
             PlayerIngredients.Remove( actionIngredient );
         }
     }
-
 }
