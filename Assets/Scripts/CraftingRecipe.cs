@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CraftingRecipe : MonoBehaviour
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/CraftingRecipe", order = 1)]
+public class CraftingRecipe : ScriptableObject
 {
-    public GameObject FirstIngredient;
-    public GameObject SecondIngredient;
-    public GameObject Result;
+    public GameIngredient FirstIngredient;
+    public GameIngredient SecondIngredient;
+    public GameIngredient Result;
+    public int Tier;
 }
