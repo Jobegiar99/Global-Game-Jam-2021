@@ -7,69 +7,64 @@ public class RecipeGenerator : MonoBehaviour
 {
     public CraftingRecipeList RecipeList;
     public List<GameIngredient> Ingredients;
-    private List<GameIngredient> AvailableIngredients;
-    private GameIngredient FirstIngredient;
-    private GameIngredient SecondIngredient;
-    private GameIngredient ThirdIngredient;
+    private List<GameIngredient> CurrentOptions;
 
     // Start is called before the first frame update
     void Start()
     {
         RecipeList = GameObject.Find("CraftingRecipeList").GetComponent<CraftingRecipeList>();
-        FirstIngredient = null;
-        SecondIngredient = null;
-        ThirdIngredient = null;
         CreateCombinations();
     }
 
     private void CreateCombinations()
     {
-        ObtainFirstThreeIngredients();
+        ObtainFirstIngredients();
         GenerateRecipes();
     }
 
     private void GenerateRecipes()
     {
+        int tier = 1;
+        int[] tierIngredientCount = new int[5]{ 8, 7, 5, 3, 1 };
         while( Ingredients.Count > 0)
         {
-            GameIngredient ingredientA = AvailableIngredients[Random.Range(0, AvailableIngredients.Count)];
-            GameIngredient ingredientB = AvailableIngredients[Random.Range(0, AvailableIngredients.Count)];
-            while(ingredientB == ingredientA)
+            List<GameIngredient> nextOptions = new List<GameIngredient>();
+            while (tierIngredientCount[tier - 1] > 0)
             {
-                ingredientB = AvailableIngredients[Random.Range(0, AvailableIngredients.Count)];
+                GameIngredient ingredientA = CurrentOptions[Random.Range(0, CurrentOptions.Count)];
+                GameIngredient ingredientB = CurrentOptions[Random.Range(0, CurrentOptions.Count)];
+                while (ingredientB == ingredientA)
+                {
+                    ingredientB = CurrentOptions[Random.Range(0, CurrentOptions.Count)];
+                }
+                GameIngredient result = Ingredients[Random.Range(0, Ingredients.Count)];
+                result.Tier = tier;
+                bool exists = RecipeList.CheckIfIngredientsFormPartOfARecipe(ingredientA, ingredientB);
+                if (!exists)
+                {
+                    CraftingRecipe newRecipe = new CraftingRecipe();
+                    newRecipe.FirstIngredient = ingredientA;
+                    newRecipe.SecondIngredient = ingredientB;
+                    nextOptions.Add(result);
+                    Ingredients.Remove(result);
+                    RecipeList.Recipes.Add(newRecipe);
+                    tierIngredientCount[tier - 1]--;
+                }
             }
-            GameIngredient result = Ingredients[Random.Range(0, Ingredients.Count)];
-            bool exists = RecipeList.CheckIfIngredientsFormPartOfARecipe(ingredientA, ingredientB);
-            if( !exists )
-            {
-                CraftingRecipe newRecipe = new CraftingRecipe();
-                newRecipe.FirstIngredient = ingredientA;
-                newRecipe.SecondIngredient = ingredientB;
-                AvailableIngredients.Add(result);
-                Ingredients.Remove(result);
-                RecipeList.Recipes.Add(newRecipe);
-            }   
+            tier += 1;
+            CurrentOptions = nextOptions;
         }
     }
 
-    private void ObtainFirstThreeIngredients()
+    private void ObtainFirstIngredients()
     {
-        FirstIngredient = Ingredients[Random.Range(0, Ingredients.Count)];
-        SecondIngredient = FirstIngredient;
-        while (SecondIngredient == FirstIngredient)
+        while( CurrentOptions.Count < 6 )
         {
-            SecondIngredient = Ingredients[Random.Range(0, Ingredients.Count)];
+            GameIngredient ingredientToAdd = Ingredients[Random.Range(0, Ingredients.Count)];
+            CurrentOptions.Add( ingredientToAdd );
+            Ingredients.Remove(ingredientToAdd);
+            
         }
-        ThirdIngredient = SecondIngredient;
-        while (ThirdIngredient == SecondIngredient)
-        {
-            ThirdIngredient = Ingredients[Random.Range(0, Ingredients.Count)];
-        }
-        AvailableIngredients.Add(FirstIngredient);
-        Ingredients.Remove(FirstIngredient);
-        AvailableIngredients.Add(SecondIngredient);
-        Ingredients.Remove(SecondIngredient);
-        AvailableIngredients.Add(ThirdIngredient);
-        Ingredients.Remove(ThirdIngredient);  
     }
 }
+ 
