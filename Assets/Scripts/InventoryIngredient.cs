@@ -2,13 +2,18 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/InventoryIngredient", order = 1)]
-public class InventoryIngredient : ScriptableObject
+public class InventoryIngredient
 {
     // Start is called before the first frame update
     public GameIngredient Ingredient;
 
     private int Quantity = 1;
+
+    public InventoryIngredient(GameIngredient ingredient, int startAmount = 1)
+    {
+        this.Ingredient = ingredient;
+        this.Quantity = startAmount;
+    }
 
     public void ModifyQuantity(string action, int magnitude)
     {

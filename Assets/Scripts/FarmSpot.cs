@@ -14,16 +14,16 @@ public class FarmSpot : MonoBehaviour
     /// </summary>
     public List<Sprite> StatusSprite;
 
-    public GameObject PlantedIngredient;
+    public GameIngredient PlantedIngredient;
 
     public PlayerInventory Inventory;
+
     // Start is called before the first frame update
     private void Start()
     {
         Status = "Empty";
         PlantedIngredient = null;
         Inventory = GameObject.Find("PlayerInventory").GetComponent<PlayerInventory>();
-
     }
 
     /// <summary>
@@ -43,7 +43,7 @@ public class FarmSpot : MonoBehaviour
             case "Ready":
 
                 Status = "Empty";
-                Inventory.UpdateInventory("Add", PlantedIngredient);
+                Inventory.UpdateInventory("Add", new InventoryIngredient(PlantedIngredient, 1));
                 PlantedIngredient = null;
                 break;
         }
@@ -55,7 +55,7 @@ public class FarmSpot : MonoBehaviour
     /// <returns>The amount of time that it will take to harvest the item</returns>
     private IEnumerator GrowIngredient()
     {
-        int harvestTime = PlantedIngredient.GetComponent<InventoryIngredient>().Ingredient.GetComponent<GameIngredient>().HarvestTime;
+        int harvestTime = PlantedIngredient.HarvestTime;
         int i = 0;
         while (i < 3)
         {
