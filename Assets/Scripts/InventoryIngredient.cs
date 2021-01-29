@@ -2,10 +2,11 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class InventoryIngredient : MonoBehaviour
+[CreateAssetMenu(fileName = "Data", menuName = "ScriptableObjects/InventoryIngredient", order = 1)]
+public class InventoryIngredient : ScriptableObject
 {
     // Start is called before the first frame update
-    public GameObject Ingredient;
+    public GameIngredient Ingredient;
 
     private int Quantity = 1;
 
