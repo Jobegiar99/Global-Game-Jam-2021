@@ -34,7 +34,7 @@ public class PlayerController : MonoBehaviour
 
         public bool Moving { get; set; }
         public Vector3 Target { get; set; }
-        public System.Action OnStartMove { get; set; }
+        public System.Action<Vector3> OnStartMove { get; set; }
         public System.Action OnStopMove { get; set; }
 
         private System.Action singleStop { get; set; }
@@ -43,10 +43,9 @@ public class PlayerController : MonoBehaviour
         {
             if (!Moving)
             {
-                OnStartMove?.Invoke();
                 onStart?.Invoke();
             }
-
+            OnStartMove?.Invoke(data.position);
             singleStop = onStop;
             agent.SetDestination(data.position);
             Moving = true;

@@ -6,11 +6,12 @@ public class InventoryIngredient : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameObject Ingredient;
+
     private int Quantity = 1;
 
-    public void ModifyQuantity( string action, int magnitude )
+    public void ModifyQuantity(string action, int magnitude)
     {
-        switch( action )
+        switch (action)
         {
             case "Add":
                 Quantity += magnitude;
