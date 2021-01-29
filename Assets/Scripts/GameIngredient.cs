@@ -9,5 +9,6 @@ public class GameIngredient : ScriptableObject
     public string Description;
     public int HarvestTime;
     public int HarvestAmount;
+    public int Tier;
     public Sprite IngredientSprite;
 }
