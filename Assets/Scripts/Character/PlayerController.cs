@@ -45,6 +45,7 @@ public class PlayerController : MonoBehaviour
             {
                 onStart?.Invoke();
             }
+            Target = data.position;
             OnStartMove?.Invoke(data.position);
             singleStop = onStop;
             agent.SetDestination(data.position);

@@ -5,6 +5,12 @@ using UnityEngine;
 public class EnvironmentInteractable : EnvironmentObject
 {
     public Transform usePosition;
+    public InteractMenuHUD menu;
+
+    private void Awake()
+    {
+        menu.connector.connectTo = transform;
+    }
 
     public override ClickData OnClick(RaycastHit hit, PlayerController player)
     {
@@ -16,9 +22,20 @@ public class EnvironmentInteractable : EnvironmentObject
         };
         player.Move(data, null, () =>
         {
-            Debug.Log("interact");
+            menu.Open();
+            UnhoverActions();
         });
 
         return data;
+    }
+
+    protected override void HoverActions()
+    {
+        OpenIndicatorUI.Instance.SetTarget(transform);
+    }
+
+    protected override void UnhoverActions()
+    {
+        OpenIndicatorUI.Instance.SetTarget(null);
     }
 }

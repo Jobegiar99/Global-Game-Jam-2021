@@ -4,6 +4,10 @@ using UnityEngine;
 
 public class EnvironmentFloor : EnvironmentObject
 {
+    protected override void HoverActions()
+    {
+    }
+
     public override ClickData OnClick(RaycastHit hit, PlayerController player)
     {
         var data = new ClickData()
@@ -15,5 +19,9 @@ public class EnvironmentFloor : EnvironmentObject
 
         player.Move(data);
         return data;
+    }
+
+    protected override void UnhoverActions()
+    {
     }
 }
