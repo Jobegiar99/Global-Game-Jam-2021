@@ -13,10 +13,8 @@ public class FarmSpot : MonoBehaviour
     /// The sprites used to give the player an idea of the status of the planted ingredient
     /// </summary>
     public List<Sprite> StatusSprite;
-
-    public GameIngredient PlantedIngredient;
-
-    public PlayerInventory Inventory;
+    
+    public InventoryIngredient PlantedIngredient;
 
     // Start is called before the first frame update
     private void Start()
@@ -55,7 +53,7 @@ public class FarmSpot : MonoBehaviour
     /// <returns>The amount of time that it will take to harvest the item</returns>
     private IEnumerator GrowIngredient()
     {
-        int harvestTime = PlantedIngredient.HarvestTime;
+        int harvestTime = PlantedIngredient.Ingredient.HarvestTime;
         int i = 0;
         while (i < 3)
         {
