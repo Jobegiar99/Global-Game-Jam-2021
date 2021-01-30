@@ -19,13 +19,14 @@ public class PlayerInventory : MonoBehaviour
     ///<para name = "action">Action to be done in the inventory</para>
     ///<para name = "actionIngredient">The ingredient which will suffer changes</para>
     /// </summary>
-    public void UpdateInventory( string action , InventoryIngredient actionIngredient )
+    public void UpdateInventory(string action, InventoryIngredient actionIngredient)
     {
-        switch( action)
+        switch (action)
         {
             case "Add":
                 AddItem(action, actionIngredient);
                 break;
+
             case "Remove":
                 RemoveItem(actionIngredient);
                 break;
@@ -37,18 +38,17 @@ public class PlayerInventory : MonoBehaviour
     ///<para name = "action">Action to be done in the inventory</para>
     ///<para name = "actionIngredient">The ingredient which will suffer changes</para>
     /// </summary>
-    private void AddItem( string action , InventoryIngredient actionIngredient )
+    private void AddItem(string action, InventoryIngredient actionIngredient)
     {
-        bool ingredientExists =PlayerIngredients.Contains( actionIngredient );
-        if( ingredientExists)
+        bool ingredientExists = PlayerIngredients.Contains(actionIngredient);
+        if (ingredientExists)
         {
-            PlayerIngredients[ PlayerIngredients.IndexOf( actionIngredient ) ].ModifyQuantity( action , 1 );
+            PlayerIngredients[PlayerIngredients.IndexOf(actionIngredient)].ModifyQuantity(action, 1);
         }
         else
         {
-            PlayerIngredients.Add( actionIngredient );
+            PlayerIngredients.Add(actionIngredient);
         }
-       
     }
 
     /// <summary>
@@ -56,12 +56,12 @@ public class PlayerInventory : MonoBehaviour
     ///<para name = "action">Action to be done in the inventory</para>
     ///<para name = "actionIngredient">The ingredient which will suffer changes</para>
     /// </summary>
-    private void RemoveItem( InventoryIngredient actionIngredient )
+    private void RemoveItem(InventoryIngredient actionIngredient)
     {
-        bool ingredientExists = PlayerIngredients.Contains( actionIngredient );
-        if( ingredientExists )
+        bool ingredientExists = PlayerIngredients.Contains(actionIngredient);
+        if (ingredientExists)
         {
-            PlayerIngredients.Remove( actionIngredient );
+            PlayerIngredients.Remove(actionIngredient);
         }
     }
 }
