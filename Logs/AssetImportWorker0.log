@@ -654,3 +654,67 @@ System memory in use after: 120.3 MB.
 Unloading 7 unused Assets to reduce memory usage. Loaded Objects now: 3203.
 Total: 2.145400 ms (FindLiveObjects: 0.329600 ms CreateObjectMapping: 0.175500 ms MarkObjects: 1.623800 ms  DeleteObjects: 0.015600 ms)
 
+========================================================================
+Received Prepare
+Registering precompiled user dll's ...
+Registered in 0.001494 seconds.
+Begin MonoManager ReloadAssembly
+Native extension for WindowsStandalone target not found
+Refreshing native plugins compatible for Editor in 0.42 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Invoked RoslynAnalysisRunner static constructor.
+RoslynAnalysisRunner will not be running.
+RoslynAnalysisRunner has terminated.
+Mono: successfully reloaded assembly
+- Completed reload, in  0.668 seconds
+Platform modules already initialized, skipping
+Shader 'Universal Render Pipeline/Particles/Lit': fallback shader 'Universal Render Pipeline/Particles/SimpleLit' not found
+Refreshing native plugins compatible for Editor in 0.45 ms, found 1 plugins.
+Preloading 0 native plugins for Editor in 0.00 ms.
+Unloading 2576 Unused Serialized files (Serialized files now loaded: 0)
+System memory in use before: 120.0 MB.
+System memory in use after: 120.2 MB.
+
+Unloading 10 unused Assets to reduce memory usage. Loaded Objects now: 3202.
+Total: 1.941600 ms (FindLiveObjects: 0.243200 ms CreateObjectMapping: 0.115400 ms MarkObjects: 1.567300 ms  DeleteObjects: 0.014500 ms)
+
+========================================================================
+Received Import Request.
+  Time since last request: 608.884374 seconds.
+  path: Assets/Prefabs/CloseIndicatorUI.prefab
+  artifactKey: Guid(286b731c83d14824bad6a3f1d2f95b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/CloseIndicatorUI.prefab using Guid(286b731c83d14824bad6a3f1d2f95b12) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'bc2afda2afb389ce4c0ebd3de5b0d0e8') in 0.078769 seconds
+  Import took 0.082651 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000222 seconds.
+  path: Assets/Prefabs/HarvestSpotUI.prefab
+  artifactKey: Guid(5f539d917fe3f34489bdb04b39a4853e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/HarvestSpotUI.prefab using Guid(5f539d917fe3f34489bdb04b39a4853e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '27be24abead0d66c952162eb935a4fec') in 0.031410 seconds
+  Import took 0.034814 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000234 seconds.
+  path: Assets/Prefabs/OpenIndicatorUI.prefab
+  artifactKey: Guid(02a1b97573b4f92468519d34f936100c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Prefabs/OpenIndicatorUI.prefab using Guid(02a1b97573b4f92468519d34f936100c) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '4ff5d4578e02ab2b8ec90f30ec55170c') in 0.006666 seconds
+  Import took 0.009612 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.561174 seconds.
+  path: Assets/Sprites/517-5176968_pen-drawing-tulip-realistic-tulip-coloring-pages-hd.png
+  artifactKey: Guid(2105c8dd54a0278449ca4f02a8bac87e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/517-5176968_pen-drawing-tulip-realistic-tulip-coloring-pages-hd.png using Guid(2105c8dd54a0278449ca4f02a8bac87e) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: '7d1b1bd3eb3a58ee6560f0cf4cbdda01') in 0.022192 seconds
+  Import took 0.026172 seconds .
+
+========================================================================
+Received Import Request.
+  Time since last request: 0.000242 seconds.
+  path: Assets/Sprites/concept-plant-removebg-preview.png
+  artifactKey: Guid(e4b74594e0cec674299eb5a9f71e3f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)
+Start importing Assets/Sprites/concept-plant-removebg-preview.png using Guid(e4b74594e0cec674299eb5a9f71e3f76) Importer(815301076,1909f56bfc062723c751e8b465ee728b)  -> (artifact id: 'f12dc8f3ce80e569fdd33957a8e9a0dc') in 0.039642 seconds
+  Import took 0.043066 seconds .
+
