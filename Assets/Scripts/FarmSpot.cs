@@ -13,7 +13,7 @@ public class FarmSpot : MonoBehaviour
     /// </summary>
     public List<Sprite> StatusSprite;
     
-    public GameObject PlantedIngredient;
+    public InventoryIngredient PlantedIngredient;
     // Start is called before the first frame update
     void Start()
     {
@@ -52,7 +52,7 @@ public class FarmSpot : MonoBehaviour
     /// <returns>The amount of time that it will take to harvest the item</returns>
     private IEnumerator GrowIngredient()
     {
-        int harvestTime = PlantedIngredient.GetComponent<InventoryIngredient>().Ingredient.GetComponent<GameIngredient>().HarvestTime;
+        int harvestTime = PlantedIngredient.Ingredient.HarvestTime;
         int i = 0;
         while ( i < 3 )
         {
