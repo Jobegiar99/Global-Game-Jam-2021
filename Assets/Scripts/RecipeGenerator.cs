@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class RecipeGenerator : MonoBehaviour
 {
-    public CraftingRecipeList RecipeList;
+    private CraftingRecipeList RecipeList;
     public List<GameIngredient> Ingredients;
     private List<GameIngredient> CurrentOptions;
 
@@ -13,6 +13,7 @@ public class RecipeGenerator : MonoBehaviour
     void Start()
     {
         RecipeList = GameObject.Find("CraftingRecipeList").GetComponent<CraftingRecipeList>();
+        CurrentOptions = new List<GameIngredient>();
         CreateCombinations();
     }
 
@@ -38,13 +39,15 @@ public class RecipeGenerator : MonoBehaviour
                     ingredientB = CurrentOptions[Random.Range(0, CurrentOptions.Count)];
                 }
                 GameIngredient result = Ingredients[Random.Range(0, Ingredients.Count)];
-                result.Tier = tier;
+                
                 bool exists = RecipeList.CheckIfIngredientsFormPartOfARecipe(ingredientA, ingredientB);
                 if (!exists)
                 {
-                    CraftingRecipe newRecipe = new CraftingRecipe();
+                    CraftingRecipe newRecipe = ScriptableObject.CreateInstance<CraftingRecipe>();
                     newRecipe.FirstIngredient = ingredientA;
                     newRecipe.SecondIngredient = ingredientB;
+                    newRecipe.Result = result;
+                    newRecipe.Tier = tier;
                     nextOptions.Add(result);
                     Ingredients.Remove(result);
                     RecipeList.Recipes.Add(newRecipe);
