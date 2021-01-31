@@ -5,6 +5,7 @@ using UnityEngine.AI;
 
 public class PlayerController : MonoBehaviour
 {
+    public bool IsPetting { get; private set; }
     public NavMeshAgent agent;
     public MovingStatus MoveStatus { get; set; }
 
@@ -13,13 +14,52 @@ public class PlayerController : MonoBehaviour
         MoveStatus = new MovingStatus(agent);
     }
 
+    public System.Action OnPet { get; set; }
+    public System.Action OnStopPet { get; set; }
+
+    private Transform cat;
+
+    public void Init()
+    {
+        IsPetting = false;
+    }
+
+    public void Stop()
+    {
+        MoveStatus.Stop();
+        IsPetting = true;
+
+        agent.SetDestination(agent.transform.position);
+    }
+
+    public void Pet(Cat cat)
+    {
+        this.cat = cat.transform;
+        IsPetting = true;
+        //transform.LookAt(cat.transform);
+        OnPet?.Invoke();
+        this.ExecuteLater(() => { IsPetting = false; OnStopPet?.Invoke(); cat = null; }, 2f);
+    }
+
     public void Move(EnvironmentObject.ClickData data, System.Action onStart = null, System.Action onStop = null)
     {
+        if (IsPetting) return;
         MoveStatus.Move(data, onStart, onStop);
     }
 
     private void Update()
     {
+        if (IsPetting)
+        {
+            if (!cat) return;
+            var targetRotation = Quaternion.LookRotation(cat.position - transform.position);
+
+            // Smoothly rotate towards the target point.
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 10f * Time.deltaTime);
+
+            return;
+        }
+
         MoveStatus.Update();
     }
 
