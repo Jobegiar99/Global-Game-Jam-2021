@@ -19,9 +19,17 @@ public class PlayerController : MonoBehaviour
 
     private Transform cat;
 
+    public void Init()
+    {
+        IsPetting = false;
+    }
+
     public void Stop()
     {
+        MoveStatus.Stop();
         IsPetting = true;
+
+        agent.SetDestination(agent.transform.position);
     }
 
     public void Pet(Cat cat)
