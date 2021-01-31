@@ -15,7 +15,10 @@ public class RecipeTooltip : MonoBehaviour
 
     public void Show(RecipeSlotUI slot)
     {
+        if (slot.recipe == null) return;
         connector.Position = slot.rt.position;
+        ingredient1Icon.sprite = slot.recipe.FirstIngredient.Info.IngredientSprite;
+        ingredient2Icon.sprite = slot.recipe.SecondIngredient.Info.IngredientSprite;
         anim.Show();
     }
 

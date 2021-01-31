@@ -33,22 +33,13 @@ public class TimedMeter : MonoBehaviour
 
     private void Update()
     {
-        timer += Time.deltaTime;
+        timer += Time.deltaTime * speed;
         if (isMoving)
         {
             Vector3 pos = indicatorRT.anchoredPosition;
             float perecentage = Mathf.PingPong(timer, 1f);
             pos.x = -TravelDistance + perecentage * TravelDistance * 2f;
             indicatorRT.anchoredPosition = pos;
-        }
-
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            if (isMoving)
-            {
-                StopWithAction(() => Debug.Log("Valid"), () => Debug.Log("Invalid"));
-            }
-            else { Move(); }
         }
     }
 

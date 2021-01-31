@@ -15,7 +15,7 @@ public class FarmSpot : MonoBehaviour
     public List<Sprite> StatusSprite;
 
     public PlayerInventory Inventory;
-    public InventoryIngredient PlantedIngredient;
+    public GameIngredientInfo PlantedIngredient;
 
     // Start is called before the first frame update
     private void Start()
@@ -29,7 +29,7 @@ public class FarmSpot : MonoBehaviour
     /// Handles the player clicking on the spot
     /// </summary>
     public void OnMouseDown()
-    {
+    {/*
         switch (Status)
         {
             case "Empty":
@@ -42,10 +42,10 @@ public class FarmSpot : MonoBehaviour
             case "Ready":
 
                 Status = "Empty";
-                Inventory.UpdateInventory("Add", PlantedIngredient);
+                //Inventory.UpdateInventory("Add", PlantedIngredient);
                 PlantedIngredient = null;
                 break;
-        }
+        }*/
     }
 
     /// <summary>
@@ -54,7 +54,7 @@ public class FarmSpot : MonoBehaviour
     /// <returns>The amount of time that it will take to harvest the item</returns>
     private IEnumerator GrowIngredient()
     {
-        int harvestTime = PlantedIngredient.Ingredient.HarvestTime;
+        int harvestTime = PlantedIngredient.HarvestTime;
         int i = 0;
         while (i < 3)
         {
@@ -63,5 +63,35 @@ public class FarmSpot : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sprite = StatusSprite[i];
         }
         Status = "Ready";
+    }
+
+    public System.Action<GameIngredientInfo> OnPlant;
+    public System.Action<GameIngredientInfo, int> OnGrowFinish;
+    public System.Action<GameIngredientInfo, int> OnCollect;
+    public bool growing = false;
+
+    public void Plant(GameIngredientInfo ingredient)
+    {
+        if (growing || PlantedIngredient != null) return;
+        PlantedIngredient = ingredient;
+        growing = true;
+        OnPlant?.Invoke(ingredient);
+        Inventory.RemoveItem(ingredient);
+        StartCoroutine(Grow());
+    }
+
+    private IEnumerator Grow()
+    {
+        yield return new WaitForSeconds(PlantedIngredient.HarvestTime);
+        OnGrowFinish?.Invoke(PlantedIngredient, PlantedIngredient.HarvestAmount);
+        growing = false;
+    }
+
+    public void Collect()
+    {
+        if (growing || PlantedIngredient == null) return;
+        OnCollect?.Invoke(PlantedIngredient, PlantedIngredient.HarvestAmount);
+        Inventory.AddItem(PlantedIngredient, PlantedIngredient.HarvestAmount);
+        PlantedIngredient = null;
     }
 }

@@ -1,0 +1,390 @@
+fileFormatVersion: 2
+guid: f69080d3b53660b47b2744be49e85d4f
+ModelImporter:
+  serializedVersion: 20200
+  internalIDToNameTable:
+  - first:
+      74: -4036101436987712534
+    second: Armature|AgarrandoObjeto
+  - first:
+      74: -5933636202461788206
+    second: Armature|ArrojandoObjecto
+  - first:
+      74: 5039161170523917339
+    second: Armature|Caminando
+  - first:
+      74: -6215960297522484268
+    second: brujita idle
+  externalObjects: {}
+  materials:
+    materialImportMode: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 3
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations:
+    - serializedVersion: 16
+      name: Armature|AgarrandoObjeto
+      takeName: Armature|AgarrandoObjeto
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 18
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|ArrojandoObjecto
+      takeName: Armature|ArrojandoObjecto
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: Armature|Caminando
+      takeName: Armature|Caminando
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 20
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 0
+      loopBlend: 0
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    - serializedVersion: 16
+      name: brujita idle
+      takeName: Armature|Caminando
+      internalID: 0
+      firstFrame: 0
+      lastFrame: 0.2
+      wrapMode: 0
+      orientationOffsetY: 0
+      level: 0
+      cycleOffset: 0
+      loop: 0
+      hasAdditiveReferencePose: 0
+      loopTime: 1
+      loopBlend: 1
+      loopBlendOrientation: 0
+      loopBlendPositionY: 0
+      loopBlendPositionXZ: 0
+      keepOriginalOrientation: 0
+      keepOriginalPositionY: 1
+      keepOriginalPositionXZ: 0
+      heightFromFeet: 0
+      mirror: 0
+      bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
+      curves: []
+      events: []
+      transformMask: []
+      maskType: 3
+      maskSource: {instanceID: 0}
+      additiveReferencePoseFrame: 0
+    isReadable: 0
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    useSRGBMaterialColor: 1
+    sortHierarchyByName: 1
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    fileIdsGeneration: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    keepQuads: 0
+    weldVertices: 1
+    bakeAxisConversion: 0
+    preserveHierarchy: 0
+    skinWeightsMode: 1
+    maxBonesPerVertex: 4
+    minBoneWeight: 0.001
+    meshOptimizationFlags: -1
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVMarginMethod: 1
+    secondaryUVMinLightmapResolution: 40
+    secondaryUVMinObjectScale: 1
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+    legacyComputeAllNormalsFromSmoothingGroupsWhenMeshHasBlendShapes: 0
+    blendShapeNormalImportMode: 1
+    normalSmoothingSource: 0
+  referencedClips: []
+  importAnimation: 1
+  humanDescription:
+    serializedVersion: 3
+    human: []
+    skeleton:
+    - name: BRUJALISTAPARAUNITY(Clone)
+      parentName: 
+      position: {x: 0, y: 0, z: 0}
+      rotation: {x: 0, y: 0, z: 0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Cabeza
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.0000000018626451, y: -0.00000023841858, z: -0.00002497434}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 62.434517, y: 62.496113, z: 62.434517}
+    - name: Cuerpo
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.031642288, y: -1.145866, z: -0.009527026}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 38.93376, y: 33.815414, z: 38.93376}
+    - name: Brazoizquierdp
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: 0.5607998, y: -0.7388042, z: -0.09768501}
+      rotation: {x: -0.70708704, y: -0.0052819317, z: 0.005281932, w: 0.70708716}
+      scale: {x: 14.843863, y: 14.689, z: 14.6745615}
+    - name: Manoderecha
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.98152775, y: -0.7672376, z: -0.10454761}
+      rotation: {x: -0.7068396, y: -0.01943519, z: 0.01943442, w: 0.7068397}
+      scale: {x: 17.26561, y: 10.431221, z: 10.420941}
+    - name: Brazoderecho
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.58653265, y: -0.7521222, z: -0.09768501}
+      rotation: {x: -0.70708704, y: -0.0052819317, z: 0.005281932, w: 0.70708716}
+      scale: {x: 14.843863, y: 14.689, z: 14.6745615}
+    - name: Manoizquierda
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: 0.9486531, y: -0.7672376, z: -0.10454761}
+      rotation: {x: -0.7068396, y: -0.01943519, z: 0.01943442, w: 0.7068397}
+      scale: {x: 17.26561, y: 10.431221, z: 10.420941}
+    - name: Sombrero
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.0000000018626451, y: -0.00000023841858, z: 0}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 99.999985, y: 99.999985, z: 99.999985}
+    - name: CabelloFrontal
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.015381677, y: 0.24847625, z: 0.6172039}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 29.63591, y: 19.81596, z: 29.63591}
+    - name: CabelloGrande
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.0000000018626451, y: -0.04100859, z: -0.22466041}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 62.612194, y: 60.871822, z: 44.566574}
+    - name: Lazo
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.05056777, y: -1.2000463, z: -0.018983174}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 105.27954, y: 72.629585, z: 90.000725}
+    - name: NudoLazo
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: -0.050568875, y: -1.2666471, z: 0.35494867}
+      rotation: {x: -0.7071067, y: -0.000000030908616, z: 0.000000030908623, w: 0.7071068}
+      scale: {x: 11.535183, y: 11.535183, z: 11.535183}
+    - name: Armature
+      parentName: BRUJALISTAPARAUNITY(Clone)
+      position: {x: 0, y: 0.21503568, z: 0}
+      rotation: {x: -0.7071067, y: 5.302452e-33, z: 5.302451e-33, w: 0.7071068}
+      scale: {x: 82.00679, y: 82.00679, z: 82.00679}
+    - name: Bone
+      parentName: Armature
+      position: {x: 4.440892e-18, y: 0.0010529459, z: -0.0000069296357}
+      rotation: {x: 0.7121644, y: 0, z: 0, w: 0.7020127}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone.001
+      parentName: Bone
+      position: {x: -4.440892e-18, y: 0.011787627, z: -0.000075049495}
+      rotation: {x: -0.007178256, y: 0, z: -0, w: 0.99997425}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Bone.002
+      parentName: Bone.001
+      position: {x: -0, y: 0.010683354, z: 4.1842297e-11}
+      rotation: {x: -0.09524161, y: -0.0009826914, z: -0.010268566, w: 0.9954007}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Bone.003
+      parentName: Bone.002
+      position: {x: 5.937181e-11, y: 0.014084939, z: -4.0099207e-10}
+      rotation: {x: -0.1455881, y: -0.0006464123, z: 0.011606247, w: 0.989277}
+      scale: {x: 0.99999994, y: 1, z: 0.9999999}
+    - name: Bone.004
+      parentName: Bone.003
+      position: {x: -4.6566126e-11, y: 0.0043791956, z: 5.3942606e-10}
+      rotation: {x: -0.49401003, y: -0.3731736, z: -0.47629178, w: 0.62437314}
+      scale: {x: 1, y: 1.0000001, z: 1}
+    - name: Bone.005
+      parentName: Bone.004
+      position: {x: 3.7252902e-11, y: 0.003922744, z: -0.000000001268131}
+      rotation: {x: -0.029945485, y: -0.049201492, z: -0.1252488, w: 0.99045205}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Bone.005_end
+      parentName: Bone.005
+      position: {x: -0, y: 0.0089921225, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_L
+      parentName: Bone
+      position: {x: -6.203068e-10, y: 0.009984267, z: -0.0010956156}
+      rotation: {x: 0.08882161, y: 0.0010675192, z: 0.98689073, w: 0.13474558}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Bone_L.001
+      parentName: Bone_L
+      position: {x: -5.587935e-10, y: 0.0064051067, z: 1.862645e-10}
+      rotation: {x: 0.09727045, y: 0.13033251, z: 0.12588929, w: 0.9786234}
+      scale: {x: 1, y: 1, z: 0.99999994}
+    - name: Bone_L.002
+      parentName: Bone_L.001
+      position: {x: 2.5145708e-10, y: 0.0050714174, z: -7.4505804e-11}
+      rotation: {x: 0.16060336, y: -0.45808786, z: -0.19344437, w: 0.85260856}
+      scale: {x: 1, y: 0.99999994, z: 1.0000001}
+    - name: Bone_L.002_end
+      parentName: Bone_L.002
+      position: {x: -0, y: 0.002441504, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_R
+      parentName: Bone
+      position: {x: 6.1860866e-10, y: 0.009984267, z: -0.0010956157}
+      rotation: {x: -0.09819482, y: -0.0024063888, z: 0.9861266, w: -0.13381468}
+      scale: {x: 0.9999999, y: 0.99999994, z: 1}
+    - name: Bone_R.001
+      parentName: Bone_R
+      position: {x: -7.4505804e-11, y: 0.006405107, z: 1.4901161e-10}
+      rotation: {x: 0.08542891, y: -0.15507692, z: -0.15324754, w: 0.97219765}
+      scale: {x: 1, y: 1, z: 0.9999999}
+    - name: Bone_R.002
+      parentName: Bone_R.001
+      position: {x: 3.958121e-11, y: 0.0050714174, z: 3.7252902e-11}
+      rotation: {x: 0.16723503, y: 0.423721, z: 0.20010357, w: 0.8674396}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_R.002_end
+      parentName: Bone_R.002
+      position: {x: -0, y: 0.002441504, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_L.003
+      parentName: Armature
+      position: {x: -0.0029301692, y: 0.0014554305, z: -0.002536264}
+      rotation: {x: -0.48652184, y: -0.52302605, z: 0.4278342, w: 0.5538033}
+      scale: {x: 0.9999999, y: 0.99999964, z: 0.9999998}
+    - name: Bone_L.003_end
+      parentName: Bone_L.003
+      position: {x: -0, y: 0.0025676514, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    - name: Bone_R.003
+      parentName: Armature
+      position: {x: 0.0029301692, y: 0.0014554306, z: -0.002536264}
+      rotation: {x: -0.5008131, y: 0.5116792, z: -0.44134197, w: 0.540914}
+      scale: {x: 0.9999999, y: 0.99999964, z: 0.9999999}
+    - name: Bone_R.003_end
+      parentName: Bone_R.003
+      position: {x: -0, y: 0.0025676514, z: 0}
+      rotation: {x: 0, y: -0, z: -0, w: 1}
+      scale: {x: 1, y: 1, z: 1}
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    globalScale: 1
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 1
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  autoGenerateAvatarMappingIfUnspecified: 1
+  animationType: 2
+  humanoidOversampling: 1
+  avatarSetup: 0
+  addHumanoidExtraRootOnlyWhenUsingAvatar: 0
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

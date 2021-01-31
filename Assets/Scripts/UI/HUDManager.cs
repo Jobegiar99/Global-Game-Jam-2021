@@ -8,7 +8,10 @@ public class HUDManager : MonoBehaviour
 {
     public List<InteractMenuHUD> menus;
     private HashSet<InteractMenuHUD> activeMenus = new HashSet<InteractMenuHUD>();
+
     public bool HasOpenMenus => activeMenus.Count > 0;
+
+    public InteractMenuHUD CurrentMenu { get; private set; }
 
     private void Awake()
     {
@@ -16,8 +19,12 @@ public class HUDManager : MonoBehaviour
         {
             menu.animator.OnStartAnimation += (val) =>
             {
-                if (val) activeMenus.Add(menu);
-                else if (activeMenus.Contains(menu)) activeMenus.Remove(menu);
+                if (val) { activeMenus.Add(menu); CurrentMenu = menu; }
+                else if (activeMenus.Contains(menu))
+                {
+                    activeMenus.Remove(menu);
+                    CurrentMenu = null;
+                }
             };
         });
     }

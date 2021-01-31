@@ -1,17 +1,70 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Utilities.UI.Animation;
 
 public class PlayerInventory : MonoBehaviour
 {
     /// <summary>
     /// List of all the ingredients that the player has.
     /// </summary>
-    private List<InventoryIngredient> PlayerIngredients;
+    private List<InventoryIngredient> PlayerIngredients = new List<InventoryIngredient>();
+
+    public Dictionary<GameIngredientInfo, int> Items { get; set; } = new Dictionary<GameIngredientInfo, int>();
+
+    public System.Action<GameIngredientInfo, int> OnAddItem { get; set; }
+
+    public System.Action<GameIngredientInfo> OnRemoveItem { get; set; }
+
+    public UIAnimator lostScreen;
+    public UIAnimator winScreen;
+
+    public GameIngredientInfo winIngredient;
 
     private void Start()
     {
-        PlayerIngredients = new List<InventoryIngredient>();
+    }
+
+    public void AddItem(GameIngredientInfo ingredient, int amount = 1)
+    {
+        if (Items.ContainsKey(ingredient)) Items[ingredient] += amount;
+        else Items.Add(ingredient, amount);
+        OnAddItem?.Invoke(ingredient, amount);
+        if (ingredient == winIngredient) { winScreen.Show(); }
+    }
+
+    public List<FarmSpot> farms;
+    public CraftingUI crafting;
+
+    public void RemoveItem(GameIngredientInfo ingredient)
+    {
+        Items[ingredient]--;
+        if (Items[ingredient] <= 0) Items.Remove(ingredient);
+        OnRemoveItem?.Invoke(ingredient);
+
+        TestLost();
+    }
+
+    public void TestLost()
+    {
+        int farmCount = 0;
+        farms.ForEach(farm =>
+        {
+            if (farm.PlantedIngredient != null) { farmCount++; }
+        });
+
+        int craftCount = 0;
+        if (crafting.slot1.ingredient != null) craftCount++;
+        if (crafting.slot2.ingredient != null) craftCount++;
+        if (crafting.collectSlot.ingredient != null) craftCount++;
+
+        if ((Items.Count + farmCount + craftCount) <= 1) { lostScreen.Show(); }
+    }
+
+    public int Amount(GameIngredientInfo ingredient)
+    {
+        if (Items.ContainsKey(ingredient)) return Items[ingredient];
+        return 0;
     }
 
     /// <summary>

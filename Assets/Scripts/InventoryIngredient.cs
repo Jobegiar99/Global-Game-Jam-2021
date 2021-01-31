@@ -5,11 +5,11 @@ using UnityEngine;
 public class InventoryIngredient
 {
     // Start is called before the first frame update
-    public GameIngredient Ingredient;
+    public GameIngredientInfo Ingredient;
 
     private int Quantity = 1;
 
-    public InventoryIngredient(GameIngredient ingredient, int startAmount = 1)
+    public InventoryIngredient(GameIngredientInfo ingredient, int startAmount = 1)
     {
         this.Ingredient = ingredient;
         this.Quantity = startAmount;
@@ -24,8 +24,7 @@ public class InventoryIngredient
                 break;
 
             case "Remove":
-                if (Quantity - magnitude >= 0)
-                    Quantity -= magnitude;
+                if (Quantity - magnitude >= 0) Quantity -= magnitude;
                 break;
         }
     }

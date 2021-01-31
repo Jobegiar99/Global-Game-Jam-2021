@@ -12,7 +12,7 @@ public class InteractMenuHUD : MonoBehaviour
 
     public virtual void Update()
     {
-        if (Input.GetMouseButtonDown(1)) Close();
+        if (IsOpen && Input.GetMouseButtonDown(1)) Close();
     }
 
     public virtual void Open()
